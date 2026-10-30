@@ -9,10 +9,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "README.md", "AGENTS.md",
+    "README.md", "AGENTS.md", "START.md", "kit.py",
     "skills/requirements/SKILL.md", "skills/planning/SKILL.md",
     "skills/debugging/SKILL.md", "skills/testing/SKILL.md",
     "skills/documentation/SKILL.md",
+    "skills/task-router/SKILL.md",
     "skills/stakeholder-interview/SKILL.md",
     "skills/timeboxed-execution/SKILL.md",
     "skills/final-defense/SKILL.md",

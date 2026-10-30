@@ -2,6 +2,21 @@
 
 실무형 AI 과제에서 요구사항을 확인하고, 계획하고, 구현하고, 검증하고, 기록하기 위한 범용 Codex CLI 도구 모음입니다. 특정 과제의 정답이나 완성 결과물을 제공하지 않습니다.
 
+## 시험장에서 이것만 기억하세요
+
+```bash
+git clone https://github.com/xodrndishfwk-crypto/codex-task.git /tmp/codex-task
+python /tmp/codex-task/kit.py check
+```
+
+그다음 Codex에 다음 한 문장만 요청합니다.
+
+```text
+/tmp/codex-task/START.md를 읽고 이 과제를 시작해.
+```
+
+자세한 첫 단계는 `START.md`에 있습니다.
+
 ## 안전 경계
 
 - 제공된 Codex만 사용합니다.
@@ -18,12 +33,15 @@
 ```text
 .
 |-- AGENTS.md
+|-- START.md
+|-- kit.py
 |-- skills/
 |   |-- requirements/SKILL.md
 |   |-- planning/SKILL.md
 |   |-- debugging/SKILL.md
 |   |-- testing/SKILL.md
 |   |-- documentation/SKILL.md
+|   |-- task-router/SKILL.md
 |   |-- stakeholder-interview/SKILL.md
 |   |-- timeboxed-execution/SKILL.md
 |   `-- final-defense/SKILL.md
@@ -48,13 +66,11 @@
 
 ## 빠른 시작
 
-1. 저장소를 공개 상태로 준비하고 시험 규정의 허용 범위를 다시 확인합니다.
-2. 과제 작업 공간에 필요한 파일만 복사하거나 공개 저장소에서 허용된 방식으로 가져옵니다.
-3. Codex에 `AGENTS.md`를 읽고 따르도록 요청합니다.
-4. `templates/requirements.md`로 사실, 가정, 질문, 수용 기준을 구분합니다.
-5. 필요한 Skill만 사용해 계획, 구현, 디버깅, 테스트, 문서화를 진행합니다.
-6. `worklog.md`에 본인이 내린 결정과 검증 근거를 짧게 남깁니다.
-7. 로컬에서 검증합니다.
+1. `START.md`를 읽습니다.
+2. `task-router`가 과제 유형을 분류합니다.
+3. 필요한 Skill만 사용해 요구사항, 구현, 검증, 문서화를 진행합니다.
+4. `worklog.md`에 본인이 내린 결정과 검증 근거를 짧게 남깁니다.
+5. 로컬에서 검증합니다.
 
 ```powershell
 python scripts/validate_toolkit.py

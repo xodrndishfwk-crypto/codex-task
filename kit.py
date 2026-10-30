@@ -1,0 +1,147 @@
+#!/usr/bin/env python3
+"""Small local entry point for the public Codex task toolkit."""
+
+from __future__ import annotations
+
+import csv
+import json
+import statistics
+import subprocess
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+
+
+def print_help() -> None:
+    print("Codex task kit")
+    print("  python kit.py check          validate this toolkit")
+    print("  python kit.py scan [PATH]    summarize a task folder")
+    print("  python kit.py data FILE      inspect a CSV or JSON file")
+    print("Start guide: START.md")
+
+
+def check() -> int:
+    return subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "validate_toolkit.py")],
+        check=False,
+    ).returncode
+
+
+def scan(path: Path) -> int:
+    path = path.resolve()
+    if not path.is_dir():
+        print(f"ERROR: folder not found: {path}")
+        return 2
+
+    ignored = {".git", "node_modules", "__pycache__", ".venv", "venv"}
+    files = [p for p in path.rglob("*") if p.is_file() and not any(part in ignored for part in p.parts)]
+    extensions = Counter((p.suffix.lower() or "[no extension]") for p in files)
+    markers = [
+        "README.md", "AGENTS.md", "package.json", "pyproject.toml",
+        "requirements.txt", "Cargo.toml", "go.mod", "Makefile",
+    ]
+    data_suffixes = {".csv", ".json", ".jsonl", ".xlsx", ".xls", ".tsv", ".parquet"}
+
+    print(f"FOLDER: {path}")
+    print(f"FILES: {len(files)}")
+    print("TOP TYPES:")
+    for suffix, count in extensions.most_common(12):
+        print(f"  {suffix}: {count}")
+    print("KEY FILES:")
+    found_markers = [name for name in markers if (path / name).exists()]
+    for name in found_markers or ["[none at folder root]"]:
+        print(f"  {name}")
+    print("DATA FILES:")
+    data_files = [p.relative_to(path) for p in files if p.suffix.lower() in data_suffixes]
+    for item in data_files[:30] or ["[none detected]"]:
+        print(f"  {item}")
+    if len(data_files) > 30:
+        print(f"  ... and {len(data_files) - 30} more")
+    return 0
+
+
+def _blank(value: object) -> bool:
+    return value is None or (isinstance(value, str) and not value.strip())
+
+
+def _number(value: object) -> float | None:
+    if value is None or isinstance(value, bool):
+        return None
+    try:
+        return float(str(value).replace(",", "").strip())
+    except ValueError:
+        return None
+
+
+def _profile_rows(rows: list[dict[str, object]], source: Path) -> int:
+    columns = list(dict.fromkeys(key for row in rows for key in row))
+    print(f"FILE: {source}")
+    print(f"ROWS: {len(rows)}")
+    print(f"COLUMNS: {len(columns)}")
+    duplicate_count = len(rows) - len({json.dumps(row, sort_keys=True, ensure_ascii=False, default=str) for row in rows})
+    print(f"DUPLICATE ROWS: {duplicate_count}")
+    print("COLUMN PROFILE:")
+    for column in columns:
+        values = [row.get(column) for row in rows]
+        blanks = sum(_blank(value) for value in values)
+        nonblank = [value for value in values if not _blank(value)]
+        unique = len({str(value) for value in nonblank})
+        numbers = [number for value in nonblank if (number := _number(value)) is not None]
+        summary = f"  {column}: blank={blanks}, unique={unique}"
+        if numbers and len(numbers) == len(nonblank):
+            summary += f", min={min(numbers):g}, max={max(numbers):g}, mean={statistics.fmean(numbers):g}"
+        print(summary)
+    return 0
+
+
+def inspect_data(path: Path) -> int:
+    path = path.resolve()
+    if not path.is_file():
+        print(f"ERROR: file not found: {path}")
+        return 2
+    suffix = path.suffix.lower()
+    try:
+        if suffix == ".csv":
+            with path.open("r", encoding="utf-8-sig", newline="") as stream:
+                rows = list(csv.DictReader(stream))
+            return _profile_rows(rows, path)
+        if suffix == ".json":
+            data = json.loads(path.read_text(encoding="utf-8-sig"))
+            if isinstance(data, list) and all(isinstance(item, dict) for item in data):
+                return _profile_rows(data, path)
+            if isinstance(data, dict):
+                print(f"FILE: {path}")
+                print("JSON OBJECT KEYS:")
+                for key, value in data.items():
+                    kind = type(value).__name__
+                    size = len(value) if isinstance(value, (list, dict, str)) else "-"
+                    print(f"  {key}: type={kind}, size={size}")
+                return 0
+            print(f"FILE: {path}\nJSON ROOT TYPE: {type(data).__name__}")
+            return 0
+    except (OSError, UnicodeError, csv.Error, json.JSONDecodeError) as error:
+        print(f"ERROR: could not read {path}: {error}")
+        return 1
+    print("ERROR: data command currently supports .csv and .json")
+    return 2
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) == 1 or argv[1] in {"help", "-h", "--help"}:
+        print_help()
+        return 0
+    command = argv[1]
+    if command == "check":
+        return check()
+    if command == "scan":
+        return scan(Path(argv[2]) if len(argv) > 2 else Path.cwd())
+    if command == "data" and len(argv) > 2:
+        return inspect_data(Path(argv[2]))
+    print_help()
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))
