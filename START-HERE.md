@@ -5,7 +5,7 @@
 ## Codex에 보낼 첫 요청
 
 ```text
-/tmp/codex-task/START.md와 skills/start/SKILL.md를 읽고 이 과제를 시작해.
+codex-task/START-HERE.md와 codex-task/skills/understand-task/SKILL.md를 읽고 이 과제를 시작해.
 과제 README와 기존 파일을 먼저 조사하고, 과제 유형을 분류한 다음
 필요한 지침만 읽어. 아직 큰 구현은 시작하지 말고 요구사항,
 실무자에게 물을 질문, 성공 기준, 검증 계획부터 보여줘.
@@ -15,24 +15,24 @@
 
 ```bash
 # 도구 자체 확인
-python /tmp/codex-task/kit.py check
+python codex-task/kit.py check
 
 # 현재 과제 구조 파악
-python /tmp/codex-task/kit.py scan .
+python codex-task/kit.py scan .
 
 # CSV 또는 JSON 데이터 빠른 조사
-python /tmp/codex-task/kit.py data 데이터파일.csv
+python codex-task/kit.py data 데이터파일.csv
 ```
 
 명령이 기억나지 않으면 다음만 실행합니다.
 
 ```bash
-python /tmp/codex-task/kit.py
+python codex-task/kit.py
 ```
 
 ## 과제 유형별 안내
 
-Codex는 `skills/start/SKILL.md`를 이용해 먼저 과제를 분류합니다. 전체 기능은 `MENU.md`에서 확인할 수 있습니다.
+Codex는 `skills/understand-task/SKILL.md`를 이용해 먼저 과제를 분류합니다. 전체 기능은 `TOOL-GUIDE.md`에서 확인할 수 있습니다.
 
 | 과제 유형 | 우선 확인 |
 |---|---|

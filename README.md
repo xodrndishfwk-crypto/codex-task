@@ -5,17 +5,17 @@
 ## 시험장에서 이것만 기억하세요
 
 ```bash
-git clone https://github.com/xodrndishfwk-crypto/codex-task.git /tmp/codex-task
-python /tmp/codex-task/kit.py check
+git clone https://github.com/xodrndishfwk-crypto/codex-task.git
+python codex-task/kit.py check
 ```
 
 그다음 Codex에 다음 한 문장만 요청합니다.
 
 ```text
-/tmp/codex-task/START.md를 읽고 이 과제를 시작해.
+codex-task/START-HERE.md를 읽고 이 과제를 시작해.
 ```
 
-자세한 첫 단계는 `START.md`에 있습니다.
+자세한 첫 단계는 `START-HERE.md`에 있습니다.
 
 ## 안전 경계
 
@@ -33,42 +33,42 @@ python /tmp/codex-task/kit.py check
 ```text
 .
 |-- AGENTS.md
-|-- START.md
-|-- MENU.md
+|-- START-HERE.md
+|-- TOOL-GUIDE.md
 |-- kit.py
 |-- skills/
-|   |-- start/SKILL.md
-|   |-- needs/SKILL.md
-|   |-- ask/SKILL.md
-|   |-- plan/SKILL.md
-|   |-- time/SKILL.md
-|   |-- debug/SKILL.md
-|   |-- test/SKILL.md
-|   |-- docs/SKILL.md
-|   `-- review/SKILL.md
+|   |-- understand-task/SKILL.md
+|   |-- find-needs/SKILL.md
+|   |-- make-questions/SKILL.md
+|   |-- make-plan/SKILL.md
+|   |-- manage-time/SKILL.md
+|   |-- fix-errors/SKILL.md
+|   |-- check-result/SKILL.md
+|   |-- write-report/SKILL.md
+|   `-- final-check/SKILL.md
 |-- templates/
-|   |-- requirements.md
-|   |-- plan.md
-|   |-- validation-report.md
-|   |-- submission-checklist.md
-|   |-- worklog.md
-|   `-- final-defense-notes.md
+|   |-- what-to-build.md
+|   |-- work-plan.md
+|   |-- test-results.md
+|   |-- before-submit.md
+|   |-- work-log.md
+|   `-- explain-my-work.md
 |-- scripts/
 |   `-- validate_toolkit.py
 |-- tests/
 |   `-- test_validate_toolkit.py
 `-- docs/
-    |-- USAGE.md
-    |-- EXAM-STRATEGY.md
-    |-- PRETRIAL-CHECKLIST.md
-    |-- ALLOWED-USE-REVIEW.md
-    `-- MCP-OPTIONAL.md
+    |-- HOW-TO-USE.md
+    |-- EXAM-FLOW.md
+    |-- BEFORE-EXAM.md
+    |-- RULES.md
+    `-- MCP-RULES.md
 ```
 
 ## 빠른 시작
 
-1. `START.md`를 읽습니다.
-2. `start`가 과제 유형을 분류합니다.
+1. `START-HERE.md`를 읽습니다.
+2. `understand-task`가 과제 유형을 분류합니다.
 3. 필요한 Skill만 사용해 요구사항, 구현, 검증, 문서화를 진행합니다.
 4. `worklog.md`에 본인이 내린 결정과 검증 근거를 짧게 남깁니다.
 5. 로컬에서 검증합니다.
@@ -96,7 +96,7 @@ Computer Use, Astra, 제3자 AI/API는 사용하지 마라. 작은 단계로 구
 - 라이선스와 출처를 확인합니다.
 - 실제 시험 PDF 원문과 최신 공지를 다시 대조합니다.
 
-세부 절차는 `docs/USAGE.md`, 사전 점검은 `docs/PRETRIAL-CHECKLIST.md`, 규정 해석과 확인 필요 사항은 `docs/ALLOWED-USE-REVIEW.md`에 있습니다.
+세부 절차는 `docs/HOW-TO-USE.md`, 사전 점검은 `docs/BEFORE-EXAM.md`, 규정 해석과 확인 필요 사항은 `docs/RULES.md`에 있습니다.
 
 ## 라이선스
 

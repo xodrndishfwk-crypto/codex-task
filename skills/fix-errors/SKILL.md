@@ -1,9 +1,9 @@
 ---
-name: debug
+name: fix-errors
 description: 로컬 코드나 테스트의 실패를 재현하고 증거 기반으로 원인을 좁힐 때 사용한다.
 ---
 
-# Debug
+# Fix Errors
 
 1. 실패를 가장 짧은 로컬 절차로 재현한다.
 2. 기대 결과와 실제 결과를 정확히 기록한다.

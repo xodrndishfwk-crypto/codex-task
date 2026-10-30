@@ -1,15 +1,15 @@
 ---
-name: needs
+name: find-needs
 description: 실무형 과제의 원문과 담당자 답변에서 요구사항, 가정, 질문, 수용 기준을 분리할 때 사용한다.
 ---
 
-# Needs
+# Find Needs
 
 과제 원문을 사실의 기준으로 삼는다. 구현 전에 기존 파일과 실행 환경을 확인한다.
 
 ## 산출물
 
-`templates/requirements.md` 형식으로 다음을 정리한다.
+`templates/what-to-build.md` 형식으로 다음을 정리한다.
 
 - 명시된 목표와 제출물
 - 기능·비기능 요구사항

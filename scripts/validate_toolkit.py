@@ -9,18 +9,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "README.md", "AGENTS.md", "START.md", "MENU.md", "kit.py",
-    "skills/start/SKILL.md", "skills/needs/SKILL.md",
-    "skills/ask/SKILL.md", "skills/plan/SKILL.md",
-    "skills/time/SKILL.md", "skills/debug/SKILL.md",
-    "skills/test/SKILL.md", "skills/docs/SKILL.md",
-    "skills/review/SKILL.md",
-    "templates/requirements.md", "templates/plan.md",
-    "templates/validation-report.md", "templates/submission-checklist.md",
-    "templates/worklog.md", "templates/final-defense-notes.md",
-    "docs/USAGE.md", "docs/PRETRIAL-CHECKLIST.md",
-    "docs/ALLOWED-USE-REVIEW.md", "docs/MCP-OPTIONAL.md",
-    "docs/EXAM-STRATEGY.md",
+    "README.md", "AGENTS.md", "START-HERE.md", "TOOL-GUIDE.md", "kit.py",
+    "skills/understand-task/SKILL.md", "skills/find-needs/SKILL.md",
+    "skills/make-questions/SKILL.md", "skills/make-plan/SKILL.md",
+    "skills/manage-time/SKILL.md", "skills/fix-errors/SKILL.md",
+    "skills/check-result/SKILL.md", "skills/write-report/SKILL.md",
+    "skills/final-check/SKILL.md",
+    "templates/what-to-build.md", "templates/work-plan.md",
+    "templates/test-results.md", "templates/before-submit.md",
+    "templates/work-log.md", "templates/explain-my-work.md",
+    "docs/HOW-TO-USE.md", "docs/BEFORE-EXAM.md",
+    "docs/RULES.md", "docs/MCP-RULES.md",
+    "docs/EXAM-FLOW.md",
 ]
 SECRET_PATTERNS = {
     "OpenAI-style key": re.compile(r"sk-[A-Za-z0-9_-]{20,}"),

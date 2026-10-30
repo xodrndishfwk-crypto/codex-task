@@ -1,9 +1,9 @@
 ---
-name: test
+name: check-result
 description: 과제의 수용 기준을 로컬 테스트와 수동 점검으로 검증하고 증거를 남길 때 사용한다.
 ---
 
-# Test
+# Check Result
 
 요구사항마다 최소 하나의 검증 방법을 연결한다.
 
@@ -14,4 +14,4 @@ description: 과제의 수용 기준을 로컬 테스트와 수동 점검으로 
 - 외부 네트워크 없이 재현 가능한 검증을 우선한다.
 - 브라우저 자동 조작이나 Computer Use를 사용하지 않는다.
 
-테스트가 불가능하면 대체 증거와 위험을 `templates/validation-report.md`에 기록한다.
+테스트가 불가능하면 대체 증거와 위험을 `templates/test-results.md`에 기록한다.
