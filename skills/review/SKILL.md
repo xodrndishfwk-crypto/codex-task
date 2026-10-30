@@ -1,9 +1,9 @@
 ---
-name: final-defense
+name: review
 description: 제출 전 실제 작업의 결정, 검증, 한계를 본인이 설명할 수 있는 근거로 정리할 때 사용한다.
 ---
 
-# Final Defense
+# Review
 
 후속 서술형은 제출물과 작업 기록을 바탕으로 생성될 수 있다. 제출 전에 자신의 작업을 다음 관점으로 점검한다.
 

@@ -1,9 +1,9 @@
 ---
-name: planning
+name: plan
 description: 요구사항을 로컬에서 검증 가능한 작은 구현 단계와 중단 조건으로 바꿀 때 사용한다.
 ---
 
-# Planning
+# Plan
 
 계획은 구현 순서가 아니라 검증 가능한 결과의 순서로 작성한다.
 

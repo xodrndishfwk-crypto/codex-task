@@ -1,9 +1,9 @@
 ---
-name: requirements
+name: needs
 description: 실무형 과제의 원문과 담당자 답변에서 요구사항, 가정, 질문, 수용 기준을 분리할 때 사용한다.
 ---
 
-# Requirements
+# Needs
 
 과제 원문을 사실의 기준으로 삼는다. 구현 전에 기존 파일과 실행 환경을 확인한다.
 

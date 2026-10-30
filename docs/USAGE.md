@@ -10,7 +10,7 @@ Codex에 기존 파일, 실행 명령, 테스트, 변경 상태를 읽기 전용
 
 ## 3. 요구사항 확정
 
-`skills/requirements/SKILL.md`, `skills/stakeholder-interview/SKILL.md`, `templates/requirements.md`를 사용한다. 모호한 내용은 업무 담당자에게 한 질문에 한 결정만 담아 묻는다.
+`skills/needs/SKILL.md`, `skills/ask/SKILL.md`, `templates/requirements.md`를 사용한다. 모호한 내용은 업무 담당자에게 한 질문에 한 결정만 담아 묻는다.
 
 예시:
 
@@ -22,15 +22,15 @@ Codex에 기존 파일, 실행 명령, 테스트, 변경 상태를 읽기 전용
 
 ## 4. 계획과 구현
 
-`skills/planning/SKILL.md`, `skills/timeboxed-execution/SKILL.md`, `templates/plan.md`를 사용한다. 각 단계는 로컬 검증 방법을 포함한다. 작은 변경 후 테스트하는 흐름을 반복하고 `templates/worklog.md`에 중요한 결정과 증거를 남긴다.
+`skills/plan/SKILL.md`, `skills/time/SKILL.md`, `templates/plan.md`를 사용한다. 각 단계는 로컬 검증 방법을 포함한다. 작은 변경 후 테스트하는 흐름을 반복하고 `templates/worklog.md`에 중요한 결정과 증거를 남긴다.
 
 ## 5. 실패 대응
 
-`skills/debugging/SKILL.md`를 사용해 재현, 증거, 가설, 최소 수정, 회귀 검증 순서로 진행한다. 로그를 외부로 보내지 않는다.
+`skills/debug/SKILL.md`를 사용해 재현, 증거, 가설, 최소 수정, 회귀 검증 순서로 진행한다. 로그를 외부로 보내지 않는다.
 
 ## 6. 최종 검증과 기록
 
-`skills/testing/SKILL.md`, `skills/documentation/SKILL.md`, `templates/validation-report.md`를 사용한다. `skills/final-defense/SKILL.md`와 `templates/final-defense-notes.md`로 본인이 작업을 설명할 수 있는지 점검하고, 마지막으로 `templates/submission-checklist.md`를 확인한다. 제출 후 후속 서술형에서는 AI를 사용하지 않는다.
+`skills/test/SKILL.md`, `skills/docs/SKILL.md`, `templates/validation-report.md`를 사용한다. `skills/review/SKILL.md`와 `templates/final-defense-notes.md`로 본인이 작업을 설명할 수 있는지 점검하고, 마지막으로 `templates/submission-checklist.md`를 확인한다. 제출 후 후속 서술형에서는 AI를 사용하지 않는다.
 
 ## 금지 도구가 제안될 때
 

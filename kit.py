@@ -19,6 +19,7 @@ def print_help() -> None:
     print("  python kit.py check          validate this toolkit")
     print("  python kit.py scan [PATH]    summarize a task folder")
     print("  python kit.py data FILE      inspect a CSV or JSON file")
+    print("  python kit.py menu           show the simple skill menu")
     print("Start guide: START.md")
 
 
@@ -135,6 +136,9 @@ def main(argv: list[str]) -> int:
     command = argv[1]
     if command == "check":
         return check()
+    if command == "menu":
+        print((ROOT / "MENU.md").read_text(encoding="utf-8"))
+        return 0
     if command == "scan":
         return scan(Path(argv[2]) if len(argv) > 2 else Path.cwd())
     if command == "data" and len(argv) > 2:

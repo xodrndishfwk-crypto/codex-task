@@ -34,17 +34,18 @@ python /tmp/codex-task/kit.py check
 .
 |-- AGENTS.md
 |-- START.md
+|-- MENU.md
 |-- kit.py
 |-- skills/
-|   |-- requirements/SKILL.md
-|   |-- planning/SKILL.md
-|   |-- debugging/SKILL.md
-|   |-- testing/SKILL.md
-|   |-- documentation/SKILL.md
-|   |-- task-router/SKILL.md
-|   |-- stakeholder-interview/SKILL.md
-|   |-- timeboxed-execution/SKILL.md
-|   `-- final-defense/SKILL.md
+|   |-- start/SKILL.md
+|   |-- needs/SKILL.md
+|   |-- ask/SKILL.md
+|   |-- plan/SKILL.md
+|   |-- time/SKILL.md
+|   |-- debug/SKILL.md
+|   |-- test/SKILL.md
+|   |-- docs/SKILL.md
+|   `-- review/SKILL.md
 |-- templates/
 |   |-- requirements.md
 |   |-- plan.md
@@ -67,7 +68,7 @@ python /tmp/codex-task/kit.py check
 ## 빠른 시작
 
 1. `START.md`를 읽습니다.
-2. `task-router`가 과제 유형을 분류합니다.
+2. `start`가 과제 유형을 분류합니다.
 3. 필요한 Skill만 사용해 요구사항, 구현, 검증, 문서화를 진행합니다.
 4. `worklog.md`에 본인이 내린 결정과 검증 근거를 짧게 남깁니다.
 5. 로컬에서 검증합니다.

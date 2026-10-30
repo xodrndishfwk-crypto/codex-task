@@ -1,9 +1,9 @@
 ---
-name: testing
+name: test
 description: 과제의 수용 기준을 로컬 테스트와 수동 점검으로 검증하고 증거를 남길 때 사용한다.
 ---
 
-# Testing
+# Test
 
 요구사항마다 최소 하나의 검증 방법을 연결한다.
 

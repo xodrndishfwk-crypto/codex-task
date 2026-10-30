@@ -1,9 +1,9 @@
 ---
-name: timeboxed-execution
+name: time
 description: 제한 시간 안에서 Codex 작업 위임, 직접 검토, 구현, 검증, 문서화와 제출 준비를 조절할 때 사용한다.
 ---
 
-# Timeboxed Execution
+# Time
 
 과제의 실제 제한 시간과 제출 안내를 우선한다. 아래 비율은 고정 규칙이 아니라 초기 기준이다.
 

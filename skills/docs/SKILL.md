@@ -1,9 +1,9 @@
 ---
-name: documentation
+name: docs
 description: 구현 결과의 실행법, 결정, 검증 결과, 한계를 과장 없이 정리할 때 사용한다.
 ---
 
-# Documentation
+# Docs
 
 독자가 작업 공간만으로 실행과 검증을 재현할 수 있게 작성한다.
 

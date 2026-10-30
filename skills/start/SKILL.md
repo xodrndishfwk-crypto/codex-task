@@ -1,9 +1,9 @@
 ---
-name: task-router
+name: start
 description: 과제를 시작할 때 README와 파일 구조를 보고 데이터, 코드 수정, 웹, 문서·파일 처리 또는 복합 업무로 분류해 필요한 지침만 선택한다.
 ---
 
-# Task Router
+# Start
 
 구현 전에 과제 README, 제출물, 기존 파일, 실행 방법을 확인한다. 필요하면 `python /tmp/codex-task/kit.py scan .`으로 파일 구조를 요약한다.
 
@@ -17,8 +17,8 @@ description: 과제를 시작할 때 README와 파일 구조를 보고 데이터
 
 ## 공통 시작
 
-1. `requirements`와 `stakeholder-interview`로 사실, 질문, 수용 기준을 정리한다.
-2. `planning`과 `timeboxed-execution`으로 검증 가능한 순서를 만든다.
+1. `needs`와 `ask`로 사실, 질문, 수용 기준을 정리한다.
+2. `plan`과 `time`으로 검증 가능한 순서를 만든다.
 3. 과제 유형에 필요한 지침만 추가로 읽는다.
 4. 기존 기술 스택과 제공 데이터를 우선하며 범위를 임의로 확장하지 않는다.
 

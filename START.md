@@ -5,7 +5,7 @@
 ## Codex에 보낼 첫 요청
 
 ```text
-/tmp/codex-task/START.md를 읽고 이 과제를 시작해.
+/tmp/codex-task/START.md와 skills/start/SKILL.md를 읽고 이 과제를 시작해.
 과제 README와 기존 파일을 먼저 조사하고, 과제 유형을 분류한 다음
 필요한 지침만 읽어. 아직 큰 구현은 시작하지 말고 요구사항,
 실무자에게 물을 질문, 성공 기준, 검증 계획부터 보여줘.
@@ -32,7 +32,7 @@ python /tmp/codex-task/kit.py
 
 ## 과제 유형별 안내
 
-Codex는 `skills/task-router/SKILL.md`를 이용해 먼저 과제를 분류합니다.
+Codex는 `skills/start/SKILL.md`를 이용해 먼저 과제를 분류합니다. 전체 기능은 `MENU.md`에서 확인할 수 있습니다.
 
 | 과제 유형 | 우선 확인 |
 |---|---|

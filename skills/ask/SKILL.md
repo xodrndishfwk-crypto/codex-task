@@ -1,9 +1,9 @@
 ---
-name: stakeholder-interview
+name: ask
 description: 실무자 에이전트에게 업무 맥락과 제품 결정을 효율적으로 확인하고 답변을 요구사항에 반영할 때 사용한다.
 ---
 
-# Stakeholder Interview
+# Ask
 
 과제 README와 기존 파일에서 답을 찾은 뒤 질문한다. 화면 사용법은 Cofa Helper, 기술 장애는 문제 신고, 업무 맥락은 실무자 에이전트로 구분한다.
 

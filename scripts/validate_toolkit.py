@@ -9,14 +9,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "README.md", "AGENTS.md", "START.md", "kit.py",
-    "skills/requirements/SKILL.md", "skills/planning/SKILL.md",
-    "skills/debugging/SKILL.md", "skills/testing/SKILL.md",
-    "skills/documentation/SKILL.md",
-    "skills/task-router/SKILL.md",
-    "skills/stakeholder-interview/SKILL.md",
-    "skills/timeboxed-execution/SKILL.md",
-    "skills/final-defense/SKILL.md",
+    "README.md", "AGENTS.md", "START.md", "MENU.md", "kit.py",
+    "skills/start/SKILL.md", "skills/needs/SKILL.md",
+    "skills/ask/SKILL.md", "skills/plan/SKILL.md",
+    "skills/time/SKILL.md", "skills/debug/SKILL.md",
+    "skills/test/SKILL.md", "skills/docs/SKILL.md",
+    "skills/review/SKILL.md",
     "templates/requirements.md", "templates/plan.md",
     "templates/validation-report.md", "templates/submission-checklist.md",
     "templates/worklog.md", "templates/final-defense-notes.md",
