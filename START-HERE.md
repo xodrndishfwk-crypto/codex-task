@@ -37,6 +37,7 @@ python codex-task/kit.py decisions 판정결과.csv
 
 | 과제 유형 | 먼저 사용할 Skill |
 |---|---|
+| 모바일·웹 애플리케이션 개발 | `inspect-app-project-and-run-locally` → `define-app-users-screens-and-core-flow` → `build-smallest-working-app-first` → `connect-app-data-storage-and-state` → `test-app-screens-inputs-and-navigation` |
 | 매뉴얼 기준으로 여러 사람·설비·업체 심사 | `list-and-group-input-files` → `turn-manual-into-rule-checklist` → `extract-facts-and-record-sources` → `apply-rules-and-explain-each-decision` |
 | CSV·Excel 데이터 분석 | `analyze-table-data-and-find-patterns` → `build-result-table-and-short-summary` |
 | 여러 파일의 값 대조 | `find-missing-duplicate-or-conflicting-data` |

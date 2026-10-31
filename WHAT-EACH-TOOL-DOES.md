@@ -30,6 +30,16 @@
 | `rank-items-and-explain-the-order` | 평가 대상과 점수 규칙 | 순위·점수·순위 이유·확인 필요 사항 |
 | `build-result-table-and-short-summary` | 분석·판정 결과 | 대상별 상세표·전체 집계·짧은 요약 |
 
+## 모바일·웹 애플리케이션을 만들 때
+
+| 이름 | 입력 | 나오는 결과 |
+|---|---|---|
+| `inspect-app-project-and-run-locally` | 기존 앱 프로젝트 | 기술 구성·실행법·수정 전 실행 결과 |
+| `define-app-users-screens-and-core-flow` | 앱 요구사항 | 핵심 사용자·필수 화면·화면 이동 계획 |
+| `build-smallest-working-app-first` | 화면 계획과 기존 코드 | 처음부터 끝까지 동작하는 최소 핵심 기능 |
+| `connect-app-data-storage-and-state` | 화면·입력·데이터 요구사항 | 저장·상태 변화·빈 화면·오류 처리가 연결된 앱 |
+| `test-app-screens-inputs-and-navigation` | 완성 앱과 요구사항 | 화면·입력·이동·모바일 배치 테스트 결과 |
+
 ## 코드를 고치고 제출을 준비할 때
 
 | 이름 | 입력 | 나오는 결과 |
@@ -51,6 +61,14 @@ codex-task/START-HERE.md와 codex-task/WHAT-EACH-TOOL-DOES.md를 읽고,
 ```text
 codex-task/skills/turn-manual-into-rule-checklist/SKILL.md를 읽고
 제공된 매뉴얼을 판정 규칙표로 만들어줘.
+```
+
+앱 개발 과제라면 다음처럼 요청할 수 있습니다.
+
+```text
+codex-task/skills/inspect-app-project-and-run-locally/SKILL.md와
+codex-task/skills/define-app-users-screens-and-core-flow/SKILL.md를 읽고
+기존 앱을 실행한 다음 핵심 화면과 사용자 흐름을 정리해줘.
 ```
 
 Skill은 결과물을 대신 제공하는 프로그램이 아니라 Codex가 업무를 정확하고 같은 방식으로 수행하도록 돕는 절차입니다.

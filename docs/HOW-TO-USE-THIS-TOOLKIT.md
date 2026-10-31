@@ -24,6 +24,18 @@ Codex에 기존 파일, 실행 명령, 테스트, 변경 상태를 읽기 전용
 
 `skills/plan-small-steps-and-checks/SKILL.md`, `skills/plan-time-and-stop-points/SKILL.md`, `templates/step-by-step-work-plan.md`를 사용한다. 각 단계는 로컬 검증 방법을 포함한다. 작은 변경 후 테스트하는 흐름을 반복하고 `templates/decisions-and-work-log.md`에 중요한 결정과 증거를 남긴다.
 
+### 앱 개발 과제
+
+앱 과제에서는 다음 순서로 필요한 Skill만 사용한다.
+
+1. `inspect-app-project-and-run-locally`: 기존 프로젝트의 기술 구성과 수정 전 실행 상태를 확인한다.
+2. `define-app-users-screens-and-core-flow`: 핵심 사용자, 필수 화면, 화면 이동과 성공 결과를 정리한다.
+3. `build-smallest-working-app-first`: 가장 중요한 사용자 흐름 하나를 처음부터 끝까지 동작하게 만든다.
+4. `connect-app-data-storage-and-state`: 입력, 저장, 상태 변화와 오류 처리를 연결한다.
+5. `test-app-screens-inputs-and-navigation`: 필수 화면, 입력, 이동, 모바일 배치와 실패 흐름을 검증한다.
+
+화면과 사용자 흐름은 `templates/app-user-flow-and-screen-plan.md`, 검증 결과는 `templates/app-screen-and-flow-test-checklist.md`에 기록한다.
+
 ## 5. 실패 대응
 
 `skills/find-and-fix-code-errors/SKILL.md`를 사용해 재현, 증거, 가설, 최소 수정, 회귀 검증 순서로 진행한다. 로그를 외부로 보내지 않는다.
