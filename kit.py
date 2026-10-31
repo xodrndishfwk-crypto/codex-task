@@ -18,7 +18,9 @@ def print_help() -> None:
     print("Codex task kit")
     print("  python kit.py check          validate this toolkit")
     print("  python kit.py scan [PATH]    summarize a task folder")
+    print("  python kit.py files [PATH]   list input files with size and type")
     print("  python kit.py data FILE      inspect a CSV or JSON file")
+    print("  python kit.py decisions FILE check a decision CSV for missing evidence")
     print("  python kit.py menu           show the simple skill menu")
     print("Start guide: START-HERE.md")
 
@@ -60,6 +62,23 @@ def scan(path: Path) -> int:
         print(f"  {item}")
     if len(data_files) > 30:
         print(f"  ... and {len(data_files) - 30} more")
+    return 0
+
+
+def list_files(path: Path) -> int:
+    path = path.resolve()
+    if not path.is_dir():
+        print(f"ERROR: folder not found: {path}")
+        return 2
+    ignored = {".git", "node_modules", "__pycache__", ".venv", "venv"}
+    files = sorted(
+        p for p in path.rglob("*")
+        if p.is_file() and not any(part in ignored for part in p.parts)
+    )
+    print("PATH\tTYPE\tBYTES")
+    for item in files:
+        print(f"{item.relative_to(path)}\t{item.suffix.lower() or '[none]'}\t{item.stat().st_size}")
+    print(f"TOTAL FILES: {len(files)}")
     return 0
 
 
@@ -129,6 +148,52 @@ def inspect_data(path: Path) -> int:
     return 2
 
 
+def check_decisions(path: Path) -> int:
+    path = path.resolve()
+    if not path.is_file() or path.suffix.lower() != ".csv":
+        print(f"ERROR: decision CSV not found: {path}")
+        return 2
+    try:
+        with path.open("r", encoding="utf-8-sig", newline="") as stream:
+            reader = csv.DictReader(stream)
+            rows = list(reader)
+            fields = set(reader.fieldnames or [])
+    except (OSError, UnicodeError, csv.Error) as error:
+        print(f"ERROR: could not read {path}: {error}")
+        return 1
+    aliases = {
+        "subject": {"subject", "subject_id", "id", "대상", "대상 ID"},
+        "decision": {"decision", "result", "판정", "전체 판정"},
+        "reason": {"reason", "이유"},
+        "source": {"source", "evidence", "근거", "근거 파일·위치"},
+    }
+    chosen = {key: next((name for name in names if name in fields), None) for key, names in aliases.items()}
+    missing_columns = [key for key, name in chosen.items() if name is None]
+    if missing_columns:
+        print("ERROR: missing columns: " + ", ".join(missing_columns))
+        return 2
+    issues: list[str] = []
+    seen: Counter[str] = Counter()
+    for number, row in enumerate(rows, start=2):
+        subject = str(row.get(chosen["subject"], "")).strip()
+        if subject:
+            seen[subject] += 1
+        for key in ("subject", "decision", "reason", "source"):
+            if _blank(row.get(chosen[key])):
+                issues.append(f"row {number}: blank {key}")
+    for subject, count in seen.items():
+        if count > 1:
+            issues.append(f"duplicate subject: {subject} ({count} rows)")
+    print(f"ROWS: {len(rows)}")
+    print(f"UNIQUE SUBJECTS: {len(seen)}")
+    print(f"ISSUES: {len(issues)}")
+    for issue in issues[:50]:
+        print(f"  {issue}")
+    if len(issues) > 50:
+        print(f"  ... and {len(issues) - 50} more")
+    return 1 if issues else 0
+
+
 def main(argv: list[str]) -> int:
     if len(argv) == 1 or argv[1] in {"help", "-h", "--help"}:
         print_help()
@@ -137,12 +202,16 @@ def main(argv: list[str]) -> int:
     if command == "check":
         return check()
     if command == "menu":
-        print((ROOT / "TOOL-GUIDE.md").read_text(encoding="utf-8"))
+        print((ROOT / "WHAT-EACH-TOOL-DOES.md").read_text(encoding="utf-8"))
         return 0
     if command == "scan":
         return scan(Path(argv[2]) if len(argv) > 2 else Path.cwd())
+    if command == "files":
+        return list_files(Path(argv[2]) if len(argv) > 2 else Path.cwd())
     if command == "data" and len(argv) > 2:
         return inspect_data(Path(argv[2]))
+    if command == "decisions" and len(argv) > 2:
+        return check_decisions(Path(argv[2]))
     print_help()
     return 2
 

@@ -41,6 +41,26 @@ class KitTests(unittest.TestCase):
         self.assertIn("DUPLICATE ROWS: 1", text)
         self.assertIn("value: blank=1", text)
 
+    def test_list_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "manual.pdf").write_bytes(b"pdf")
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                result = kit.list_files(root)
+        self.assertEqual(0, result)
+        self.assertIn("manual.pdf\t.pdf\t3", output.getvalue())
+
+    def test_decision_check_finds_blank_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "decisions.csv"
+            path.write_text("subject,decision,reason,source\nA,pass,meets rule,\n", encoding="utf-8")
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                result = kit.check_decisions(path)
+        self.assertEqual(1, result)
+        self.assertIn("blank source", output.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()

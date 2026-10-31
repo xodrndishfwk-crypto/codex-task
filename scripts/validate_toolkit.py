@@ -9,18 +9,37 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "README.md", "AGENTS.md", "START-HERE.md", "TOOL-GUIDE.md", "kit.py",
-    "skills/understand-task/SKILL.md", "skills/find-needs/SKILL.md",
-    "skills/make-questions/SKILL.md", "skills/make-plan/SKILL.md",
-    "skills/manage-time/SKILL.md", "skills/fix-errors/SKILL.md",
-    "skills/check-result/SKILL.md", "skills/write-report/SKILL.md",
-    "skills/final-check/SKILL.md",
-    "templates/what-to-build.md", "templates/work-plan.md",
-    "templates/test-results.md", "templates/before-submit.md",
-    "templates/work-log.md", "templates/explain-my-work.md",
-    "docs/HOW-TO-USE.md", "docs/BEFORE-EXAM.md",
-    "docs/RULES.md", "docs/MCP-RULES.md",
-    "docs/EXAM-FLOW.md",
+    "README.md", "AGENTS.md", "START-HERE.md", "WHAT-EACH-TOOL-DOES.md", "kit.py",
+    "skills/inspect-task-and-choose-workflow/SKILL.md",
+    "skills/list-required-results-and-rules/SKILL.md",
+    "skills/prepare-clear-business-questions/SKILL.md",
+    "skills/plan-small-steps-and-checks/SKILL.md",
+    "skills/plan-time-and-stop-points/SKILL.md",
+    "skills/list-and-group-input-files/SKILL.md",
+    "skills/turn-manual-into-rule-checklist/SKILL.md",
+    "skills/extract-facts-and-record-sources/SKILL.md",
+    "skills/apply-rules-and-explain-each-decision/SKILL.md",
+    "skills/find-missing-duplicate-or-conflicting-data/SKILL.md",
+    "skills/analyze-table-data-and-find-patterns/SKILL.md",
+    "skills/rank-items-and-explain-the-order/SKILL.md",
+    "skills/build-result-table-and-short-summary/SKILL.md",
+    "skills/find-and-fix-code-errors/SKILL.md",
+    "skills/test-results-against-requirements/SKILL.md",
+    "skills/write-result-and-test-report/SKILL.md",
+    "skills/check-everything-before-submit/SKILL.md",
+    "templates/required-results-and-rules.md",
+    "templates/step-by-step-work-plan.md",
+    "templates/test-results-and-evidence.md",
+    "templates/final-submission-checklist.md",
+    "templates/decisions-and-work-log.md",
+    "templates/work-explanation-notes.md",
+    "templates/input-file-list.md", "templates/rule-checklist.md",
+    "templates/facts-with-sources.md", "templates/decision-table.md",
+    "docs/HOW-TO-USE-THIS-TOOLKIT.md",
+    "docs/BEFORE-EXAM-CHECKLIST.md",
+    "docs/ALLOWED-AND-NOT-ALLOWED.md",
+    "docs/WHEN-MCP-IS-SAFE-TO-USE.md",
+    "docs/STEP-BY-STEP-EXAM-WORKFLOW.md",
 ]
 SECRET_PATTERNS = {
     "OpenAI-style key": re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
@@ -41,6 +60,10 @@ def validate(root: Path = ROOT) -> list[str]:
         text = skill.read_text(encoding="utf-8")
         if not text.startswith("---\n") or "\nname:" not in text or "\ndescription:" not in text:
             errors.append(f"invalid skill frontmatter: {skill.relative_to(root)}")
+            continue
+        match = re.search(r"^name:\s*([^\s]+)\s*$", text, re.MULTILINE)
+        if match and match.group(1) != skill.parent.name:
+            errors.append(f"skill name does not match folder: {skill.relative_to(root)}")
 
     ignored_parts = {".git", "__pycache__", ".pytest_cache"}
     for path in root.rglob("*"):
