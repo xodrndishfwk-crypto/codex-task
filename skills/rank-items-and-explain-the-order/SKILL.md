@@ -1,17 +1,17 @@
 ---
 name: rank-items-and-explain-the-order
-description: 설비, 요청, 지원자, 공급업체 같은 항목을 주어진 점수와 우선순위 규칙으로 정렬하고 순위 이유를 설명할 때 사용한다.
+description: Rank equipment, requests, applicants, vendors, or other items with provided scoring and priority rules, and explain every rank.
 ---
 
 # Rank Items and Explain the Order
 
-점수 계산식, 가중치, 필수 탈락 조건, 동점 규칙을 먼저 확정한다.
+Confirm the scoring formula, weights, mandatory disqualifiers, and tie rules before calculating.
 
-- 원문에 없는 가중치를 임의로 만들지 않는다.
-- 점수 구성 요소와 최종 점수를 모두 남긴다.
-- 필수 조건 탈락과 단순 저점수를 구분한다.
-- 동점과 결측값 처리 방법을 명시한다.
-- 상위와 하위 항목을 표본으로 다시 계산한다.
-- 순위가 입력 변화에 민감하면 그 위험을 보고한다.
+- Do not invent weights that are absent from the source requirements.
+- Preserve every score component and the final score.
+- Distinguish mandatory disqualification from a merely low score.
+- State how ties and missing values are handled.
+- Recalculate samples from the top and bottom of the ranking.
+- Report when small input changes could materially change the order.
 
-최종 결과는 순위, 점수, 핵심 이유, 확인 필요 사항을 포함한다.
+The final result must include rank, score, key reason, and needs-review items.

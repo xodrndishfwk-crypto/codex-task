@@ -1,15 +1,15 @@
 ---
 name: find-and-fix-code-errors
-description: 코드나 테스트 실패를 재현하고 원인을 좁혀 최소 수정한 뒤 관련 테스트로 다시 확인할 때 사용한다.
+description: Reproduce a code or test failure, narrow down the cause, apply the smallest relevant fix, and rerun regression checks.
 ---
 
 # Find and Fix Code Errors
 
-1. 실패를 가장 짧은 로컬 절차로 재현한다.
-2. 기대 결과와 실제 결과를 정확히 기록한다.
-3. 최근 변경, 입력, 환경, 경계조건을 확인한다.
-4. 한 번에 하나의 가설을 검증한다.
-5. 원인에 직접 대응하는 최소 수정만 적용한다.
-6. 재현 테스트와 관련 회귀 테스트를 다시 실행한다.
+1. Reproduce the failure with the shortest local procedure.
+2. Record the expected and actual results exactly.
+3. Inspect recent changes, inputs, environment, and boundary conditions.
+4. Test one cause hypothesis at a time.
+5. Apply the smallest change that directly addresses the confirmed cause.
+6. Rerun the reproduction test and relevant regression tests.
 
-로그나 데이터를 외부 서비스에 업로드하지 않는다. 원격 분석, 웹 검색 기반 코드 실행, 별도 AI 검토를 사용하지 않는다. 재현 불가 시 환경과 미확인 항목을 남기고 성공으로 보고하지 않는다.
+Do not upload logs or data to an external service. Do not use remote analysis, web-executed code, or another AI reviewer. If the failure cannot be reproduced, record the environment and unknowns and do not report success.

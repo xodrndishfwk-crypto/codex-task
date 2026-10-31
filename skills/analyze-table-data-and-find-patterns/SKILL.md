@@ -1,17 +1,17 @@
 ---
 name: analyze-table-data-and-find-patterns
-description: CSV, JSON, Excel 같은 표 데이터를 점검하고 집계, 비교, 추세, 이상값을 계산해 업무 질문에 답할 때 사용한다.
+description: Inspect CSV, JSON, or Excel-style tables and calculate summaries, comparisons, trends, and anomalies to answer a business question.
 ---
 
 # Analyze Table Data and Find Patterns
 
-분석 질문, 대상 행, 지표 정의, 분모를 먼저 명시한다.
+State the analysis question, included rows, metric definitions, and denominators before calculating.
 
-- 행·열 수, 자료형, 결측, 중복, 범위와 단위를 점검한다.
-- 원본을 보존하고 변환 규칙과 제외 건수를 기록한다.
-- 전체값과 주요 그룹별 값을 함께 계산한다.
-- 비율은 분자와 분모, 순위는 동점 처리, 추세는 비교 기간을 표시한다.
-- 이상값은 자동 삭제하지 말고 기준과 영향부터 보고한다.
-- 핵심 수치는 다른 계산 방법이나 표본 수동 계산으로 재확인한다.
+- Check row and column counts, data types, missing values, duplicates, ranges, and units.
+- Preserve source data and record transformation rules and excluded row counts.
+- Calculate both overall values and useful group-level values.
+- For rates, show numerator and denominator. For rankings, state tie handling. For trends, state the compared periods.
+- Do not delete outliers automatically; report the detection rule and their impact first.
+- Recheck key figures with a second calculation or a small manual sample.
 
-결과에는 질문에 대한 답, 근거 수치, 계산 방법, 한계가 포함되어야 한다.
+The result must include the answer, supporting figures, calculation method, and limitations.

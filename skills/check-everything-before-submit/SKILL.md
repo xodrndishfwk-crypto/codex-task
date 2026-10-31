@@ -1,17 +1,17 @@
 ---
 name: check-everything-before-submit
-description: 제출 직전에 빠진 파일, 미검증 요구사항, 실행 문제, 기록 누락을 확인하고 본인이 작업을 설명할 근거를 정리할 때 사용한다.
+description: Before submission, find missing files, unverified requirements, run problems, and record gaps, then prepare factual notes for explaining the work.
 ---
 
 # Check Everything Before Submit
 
-후속 서술형은 제출물과 작업 기록을 바탕으로 생성될 수 있다. 제출 전에 자신의 작업을 다음 관점으로 점검한다.
+The post-submission written questions may be based on the deliverable and work records. Before submission, check:
 
-- 문제를 어떻게 해석했고 무엇을 성공 기준으로 삼았는가
-- 실무자 답변으로 어떤 결정이 바뀌었는가
-- 왜 이 설계를 선택했고 어떤 대안을 제외했는가
-- 어떤 테스트를 실제 실행했고 무엇을 증명하는가
-- 실패, 미완료, 위험, 다음 개선은 무엇인가
-- Codex의 제안을 어떻게 검토하고 수정했는가
+- How the problem was interpreted and what counted as success.
+- Which decisions changed after business-owner answers.
+- Why the chosen design was used and which alternatives were rejected.
+- Which tests were actually run and what each test proves.
+- Failures, unfinished work, risks, and possible next improvements.
+- How Codex suggestions were reviewed, corrected, or rejected by the user.
 
-`templates/work-explanation-notes.md`에는 사실과 근거만 간결하게 기록한다. 예상 답안을 대신 작성하지 않는다. 제출 후 후속 서술형에서는 이 Skill, AI, 외부 브라우저, 다른 기기의 AI, 복사·붙여넣기를 사용하지 않고 본인이 직접 답한다.
+Write only concise facts and evidence in `templates/work-explanation-notes.md`. Do not create predicted answers. After submission, answer the written questions personally without this Skill, AI, external browsing, another device's AI, or copy and paste.

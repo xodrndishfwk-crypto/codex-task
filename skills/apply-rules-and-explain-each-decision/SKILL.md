@@ -1,16 +1,16 @@
 ---
 name: apply-rules-and-explain-each-decision
-description: 구조화한 규칙을 모든 대상에게 동일하게 적용하고 통과, 탈락, 확인 필요 결과와 그 이유를 대상별로 만들 때 사용한다.
+description: Apply structured rules consistently to every subject and produce a decision, reason, rule ID, and evidence for each subject.
 ---
 
 # Apply Rules and Explain Each Decision
 
-규칙표와 사실표를 입력으로 사용하고 원문에서 직접 새 사실을 만들지 않는다.
+Use the rule checklist and fact table as inputs. Do not invent new facts from the source documents during this step.
 
-- 각 대상과 규칙 조합에 `충족`, `미충족`, `확인 필요`, `해당 없음` 중 하나를 기록한다.
-- 전체 판정이 어떤 규칙 결과에서 나온 것인지 연결한다.
-- 필수 증거가 없거나 규칙이 모호하면 억지로 통과·탈락시키지 않는다.
-- 모든 대상에게 같은 경계값, 예외, 우선순위를 적용한다.
-- 결과 건수 합계가 전체 대상 수와 일치하는지 확인한다.
+- Record one of the exact statuses defined in `templates/decision-table.md` for every subject-rule pair.
+- Link the overall decision to the rule results that caused it.
+- When required evidence is missing or a rule is ambiguous, mark it for review instead of forcing a pass or fail.
+- Apply the same thresholds, exceptions, and priority order to every subject.
+- Confirm that decision counts add up to the full subject count.
 
-`templates/decision-table.md`를 사용해 판정, 이유, 규칙 ID, 근거 위치를 함께 남긴다.
+Use `templates/decision-table.md` to record the decision, reason, rule ID, and evidence location together.

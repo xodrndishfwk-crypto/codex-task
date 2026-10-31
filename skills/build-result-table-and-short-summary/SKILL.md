@@ -1,17 +1,17 @@
 ---
 name: build-result-table-and-short-summary
-description: 분석과 판정 결과를 대상별 상세표, 전체 집계, 핵심 발견, 확인 필요 항목으로 정리해 바로 검토할 수 있는 결과물을 만들 때 사용한다.
+description: Turn analysis or decision results into a review-ready detail table, totals, key findings, and a separate needs-review list.
 ---
 
 # Build Result Table and Short Summary
 
-독자가 원본을 다시 읽지 않아도 결과와 근거를 추적할 수 있게 구성한다.
+Make every result traceable without requiring the reviewer to reread all source files.
 
-- 상세표에는 대상, 결과, 이유, 규칙 ID, 근거 위치를 포함한다.
-- 전체 대상 수와 결과별 건수 및 비율을 표시한다.
-- 중요한 발견과 예외를 짧은 문장으로 요약한다.
-- `확인 필요` 항목은 담당자, 필요한 정보, 영향과 함께 분리한다.
-- 개인정보와 불필요한 원문 전문은 결과물에 복사하지 않는다.
-- 표의 합계가 원본 대상 수와 일치하는지 마지막에 확인한다.
+- Include subject, result, reason, rule ID, and evidence location in the detail table.
+- Show the total subject count and counts and rates for each result.
+- Summarize important findings and exceptions in short sentences.
+- Separate needs-review items and state the missing information and its impact.
+- Do not copy unnecessary personal data or full source passages into the output.
+- Confirm that table totals match the source subject count.
 
-결과 형식은 과제의 제출 요구사항을 우선하며, 장식보다 정확성과 추적성을 우선한다.
+Follow the task's required output format. Prefer accuracy and traceability over decoration.

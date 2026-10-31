@@ -1,17 +1,17 @@
 ---
 name: write-result-and-test-report
-description: 완성한 기능의 실행법, 주요 결정, 실제 테스트 결과, 알려진 한계를 재현 가능한 보고서로 정리할 때 사용한다.
+description: Write a reproducible report covering how to run the result, key decisions, actual test results, known limitations, and source licenses.
 ---
 
 # Write Result and Test Report
 
-독자가 작업 공간만으로 실행과 검증을 재현할 수 있게 작성한다.
+Enable a reviewer to reproduce execution and verification using only the workspace.
 
-- 목적과 구현 범위
-- 사전 조건과 로컬 실행 명령
-- 주요 파일과 설계 결정
-- 수행한 테스트와 실제 결과
-- 알려진 한계, 미완료, `[확인 필요]`
-- 사용한 공개 자료와 라이선스
+- Purpose and implemented scope.
+- Prerequisites and local run commands.
+- Important files and design decisions.
+- Tests actually performed and their actual results.
+- Known limitations, unfinished work, and needs-review items.
+- Public sources and licenses used.
 
-실행하지 않은 검증이나 존재하지 않는 기능을 주장하지 않는다. 비밀정보, 개인정보, 시험 대화 전문, 불필요한 로그를 포함하지 않는다. 외부 링크는 꼭 필요한 공개 출처에만 사용한다.
+Do not claim a test that was not run or a feature that does not exist. Exclude secrets, personal data, full exam conversations, and unnecessary logs. Use external links only for necessary public sources.

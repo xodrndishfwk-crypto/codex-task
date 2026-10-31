@@ -1,24 +1,24 @@
 ---
 name: plan-time-and-stop-points
-description: 제한 시간 안에서 조사, 구현, 검증, 문서화 시간을 나누고 새 기능을 멈출 시점을 정할 때 사용한다.
+description: Divide limited time among inspection, implementation, verification, documentation, and submission, and define when to stop adding features.
 ---
 
 # Plan Time and Stop Points
 
-과제의 실제 제한 시간과 제출 안내를 우선한다. 아래 비율은 고정 규칙이 아니라 초기 기준이다.
+Follow the task's actual time limit and submission guidance. Use these percentages only as a starting point:
 
-- 10%: 환경, README, 기존 코드, 제출물 파악
-- 15%: 실무자 질문, 요구사항, 수용 기준, 위험 확인
-- 50%: 핵심 기능을 작은 단계로 구현하고 즉시 검증
-- 15%: 회귀 테스트, 사용자 흐름, 오류 입력 검증
-- 10%: 문서, 저장 상태, 제출 미리보기, 작업 일지 정리
+- 10%: inspect environment, README, existing code, and deliverables.
+- 15%: clarify business questions, requirements, acceptance criteria, and risks.
+- 50%: implement the core flow in small steps and verify each step immediately.
+- 15%: run regression checks and test user flows, invalid inputs, and boundaries.
+- 10%: finalize documentation, saved state, submission preview, and work notes.
 
-## 운영 규칙
+## Operating rules
 
-- Codex 요청마다 기대 산출물과 검증 방법을 포함한다.
-- 긴 작업은 중간 결과를 파일에 남기고 중단 기준을 정한다.
-- 실행 중인 요청을 같은 내용으로 중복 전송하지 않는다.
-- 승인 대기, 실행 중, 완료를 구분한다.
-- 핵심 흐름이 동작하기 전에는 장식이나 범위 확장에 시간을 쓰지 않는다.
-- 제출 권장 시점 전에 새 기능을 시작하지 않는다.
-- 시간 부족 시 미완료를 숨기지 말고 동작하는 범위와 한계를 명확히 한다.
+- Include the expected output and verification method in every Codex request.
+- Save intermediate results for long work and define a stopping condition.
+- Do not send a duplicate request while the same work is running.
+- Distinguish waiting for approval, running, and complete states.
+- Do not spend time on decoration or scope expansion before the core flow works.
+- Stop starting new features before the recommended submission time.
+- When time is short, report the working scope and limitations instead of hiding unfinished work.

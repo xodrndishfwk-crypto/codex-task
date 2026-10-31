@@ -1,20 +1,20 @@
 ---
 name: prepare-clear-business-questions
-description: 실무자 에이전트에게 성공 기준, 예외, 우선순위를 확인할 짧은 질문을 만들고 답변을 요구사항에 반영할 때 사용한다.
+description: Prepare short decision-focused questions for the business-owner agent about success criteria, exceptions, priorities, and data handling.
 ---
 
 # Prepare Clear Business Questions
 
-과제 README와 기존 파일에서 답을 찾은 뒤 질문한다. 화면 사용법은 Cofa Helper, 기술 장애는 문제 신고, 업무 맥락은 실무자 에이전트로 구분한다.
+Search the task README and existing files before asking. Route interface instructions to Cofa Helper, technical failures to problem reporting, and business context to the business-owner agent.
 
-## 질문 우선순위
+## Question priority
 
-1. 성공 기준과 필수 사용자
-2. 반드시 동작해야 하는 핵심 흐름
-3. 입력, 출력, 예외, 데이터 보존 기준
-4. 우선순위와 시간 부족 시 제외 가능한 범위
-5. 확인 방법과 이해관계자가 중요하게 보는 품질
+1. Success criteria and required users.
+2. The core flow that must work.
+3. Inputs, outputs, exceptions, and data-retention rules.
+4. Priorities and scope that may be dropped if time is short.
+5. Verification methods and stakeholder quality expectations.
 
-한 질문에는 한 결정만 담고 가능한 선택지와 영향을 짧게 제시한다. 이미 명시된 내용을 반복 질문하지 않는다. 답변을 받은 뒤 요구사항 ID, 결정, 구현 영향, 검증 방법을 작업 일지에 연결한다.
+Put one decision in each question. Briefly state realistic options and their impact. Do not ask for information already written in the task. After an answer, link the requirement ID, decision, implementation impact, and verification method in the work log.
 
-답변이 지연되면 안전하고 되돌릴 수 있는 조사만 진행한다. 답변이 없는 사항을 사실처럼 구현하지 않는다.
+If an answer is delayed, continue only safe, reversible inspection. Do not implement an unanswered assumption as fact.

@@ -1,16 +1,16 @@
 ---
 name: find-missing-duplicate-or-conflicting-data
-description: 여러 파일과 표를 비교해 빠진 값, 중복 대상, 서로 다른 값, 연결되지 않은 기록을 찾아 검토 목록을 만들 때 사용한다.
+description: Compare related files and tables to find missing values, duplicate subjects, conflicting values, and unmatched records, then create a review list.
 ---
 
 # Find Missing, Duplicate, or Conflicting Data
 
-비교 전에 대상 식별자와 비교할 필드를 명시한다.
+State the subject identifier and compared fields before comparing records.
 
-- 앞뒤 공백, 대소문자, 날짜·숫자 형식을 정규화하되 원본도 보존한다.
-- 완전 중복과 같은 대상의 여러 유효 기록을 구분한다.
-- 어느 출처가 우선인지 규정에 없으면 임의로 한 값을 선택하지 않는다.
-- 누락, 중복, 충돌, 연결 실패를 각각 집계한다.
-- 수정 제안과 원본 사실을 별도 열로 관리한다.
+- Normalize surrounding spaces, letter case, dates, and number formats while preserving original values.
+- Distinguish exact duplicates from multiple valid records for the same subject.
+- Do not choose a winning source when the rules do not define source priority.
+- Count missing values, duplicates, conflicts, and unmatched records separately.
+- Keep suggested corrections separate from source facts.
 
-결과는 해결 여부와 근거를 포함한 검토 목록으로 만든다.
+Produce a review list that includes status and supporting evidence for every issue.

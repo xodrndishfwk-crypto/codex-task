@@ -1,17 +1,17 @@
 ---
 name: test-results-against-requirements
-description: 완성 결과가 모든 요구사항과 성공 기준을 충족하는지 로컬 테스트와 수동 점검으로 확인하고 증거를 남길 때 사용한다.
+description: Verify that the completed result satisfies every requirement and acceptance criterion using local tests and manual checks, and record evidence.
 ---
 
 # Test Results Against Requirements
 
-요구사항마다 최소 하나의 검증 방법을 연결한다.
+Map at least one verification method to every requirement.
 
-- 빠른 정적 검사와 단위 테스트를 먼저 실행한다.
-- 핵심 사용자 흐름, 오류 입력, 경계조건을 확인한다.
-- 기존 테스트를 삭제하거나 약화해 통과시키지 않는다.
-- 실행한 명령, 결과, 실패 수, 건너뛴 항목과 이유를 기록한다.
-- 외부 네트워크 없이 재현 가능한 검증을 우선한다.
-- 브라우저 자동 조작이나 Computer Use를 사용하지 않는다.
+- Run fast static checks and unit tests first.
+- Check the core user flow, invalid inputs, and boundary conditions.
+- Do not delete or weaken existing tests to make them pass.
+- Record commands, actual results, failure counts, skipped checks, and reasons.
+- Prefer verification that is reproducible without external network access.
+- Do not use browser automation or Computer Use.
 
-테스트가 불가능하면 대체 증거와 위험을 `templates/test-results-and-evidence.md`에 기록한다.
+When a test is impossible, record substitute evidence and the remaining risk in `templates/test-results-and-evidence.md`.

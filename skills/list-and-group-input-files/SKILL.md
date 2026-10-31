@@ -1,16 +1,16 @@
 ---
 name: list-and-group-input-files
-description: 제공된 폴더의 모든 입력 파일을 목록화하고 사람, 설비, 업체 같은 대상별로 묶어 누락과 중복을 찾을 때 사용한다.
+description: Inventory all provided input files, group them by person, equipment, vendor, or other subject, and identify missing or duplicate files.
 ---
 
 # List and Group Input Files
 
-분석 전에 입력 파일의 전체 수와 구성을 확정한다.
+Confirm the full input count and structure before analysis.
 
-- 파일 경로, 형식, 크기, 대상 식별자, 문서 종류를 표로 만든다.
-- 파일명만 믿지 말고 가능한 경우 문서 내부 식별자도 대조한다.
-- 대상별 예상 문서 수와 실제 문서 수를 비교한다.
-- 이름이 비슷한 중복 파일, 빈 파일, 읽을 수 없는 파일을 따로 표시한다.
-- 원본 파일은 수정하지 않고 결과 표에는 상대 경로를 기록한다.
+- Create a table with file path, type, size, subject ID, and document type.
+- Do not rely only on filenames; compare identifiers inside documents when possible.
+- Compare expected and actual document counts for each subject.
+- Mark possible duplicates, empty files, and unreadable files separately.
+- Do not modify source files. Record relative paths in the output.
 
-결과는 `templates/input-file-list.md`에 기록한다. 식별자가 불명확하면 임의로 합치지 말고 `[확인 필요]`로 남긴다.
+Record the inventory in `templates/input-file-list.md`. If an identifier is unclear, do not merge records by guess; use the template's needs-review label.

@@ -1,16 +1,16 @@
 ---
 name: turn-manual-into-rule-checklist
-description: 매뉴얼, 규정, 안내 PDF에서 판단 조건과 예외를 추출해 대상마다 같은 방식으로 적용할 규칙 체크리스트를 만들 때 사용한다.
+description: Convert a manual, policy, or instruction PDF into a decision checklist with conditions, evidence, exceptions, outcomes, and source locations.
 ---
 
 # Turn Manual into Rule Checklist
 
-원문을 요약하는 데서 끝내지 말고 판단에 사용할 수 있는 규칙으로 바꾼다.
+Do not stop at summarizing the source. Convert it into rules that can be applied consistently.
 
-- 각 규칙에 고유 ID, 조건, 필요한 증거, 예외, 결과를 부여한다.
-- `그리고`, `또는`, 기간, 단위, 이상·초과 같은 경계를 원문대로 구분한다.
-- 규칙마다 문서명과 페이지 또는 절 위치를 기록한다.
-- 원문에 없는 조건을 상식이나 추측으로 추가하지 않는다.
-- 충돌하거나 모호한 규칙은 실무자 질문으로 분리한다.
+- Give every rule a unique ID, condition, required evidence, exception, and outcome.
+- Preserve the exact meaning of AND, OR, time periods, units, and inclusive or exclusive boundaries.
+- Record the document name and page or section for every rule.
+- Do not add conditions from common sense or guesswork when they are absent from the source.
+- Separate conflicting or ambiguous rules into questions for the business owner.
 
-결과는 `templates/rule-checklist.md`에 작성하고 적용 전에 규칙 수와 출처를 다시 확인한다.
+Write the result in `templates/rule-checklist.md`. Before applying it, recheck the rule count and every source location.

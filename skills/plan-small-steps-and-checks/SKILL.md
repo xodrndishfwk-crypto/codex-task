@@ -1,17 +1,17 @@
 ---
 name: plan-small-steps-and-checks
-description: 요구사항을 작은 작업 단계로 나누고 각 단계의 기대 결과와 로컬 확인 방법을 정할 때 사용한다.
+description: Break confirmed requirements into small work steps and define the expected result and local verification method for every step.
 ---
 
 # Plan Small Steps and Checks
 
-계획은 구현 순서가 아니라 검증 가능한 결과의 순서로 작성한다.
+Order the plan by verifiable outcomes rather than by vague implementation phases.
 
-- 각 단계에 변경 대상, 기대 결과, 검증 명령 또는 관찰 방법을 포함한다.
-- 불확실성이 큰 항목을 먼저 확인한다.
-- 기존 구조와 사용자 변경을 보존한다.
-- 네트워크, 외부 전송, Computer Use, Astra, 별도 AI/API를 전제로 하지 않는다.
-- MCP는 없어도 완료 가능한 계획을 기본으로 한다.
-- 삭제, 대규모 재작성, 데이터 변환 전에는 영향과 복구 방법을 확인한다.
+- For every step, state the files or area to change, expected result, and command or observation that will verify it.
+- Resolve high-impact uncertainty early.
+- Preserve the existing structure and user changes.
+- Do not depend on network access, external transmission, Computer Use, Astra, or another AI or API.
+- Prefer a plan that still works without MCP.
+- Before deletion, large rewrites, or data conversion, check impact and recovery options.
 
-`templates/step-by-step-work-plan.md`를 사용하고, 진행 중 발견된 사실에 따라 계획과 근거를 함께 갱신한다.
+Use `templates/step-by-step-work-plan.md`. Update both the plan and its evidence when new facts are discovered.
