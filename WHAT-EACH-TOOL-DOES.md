@@ -6,6 +6,7 @@
 
 | 이름 | 입력 | 나오는 결과 |
 |---|---|---|
+| `explain-readme-in-plain-korean` | 시험 과제 README와 참조 명세 | 목적·사용자·사용 예시·입력과 결과·필수 조건을 쉽게 설명한 한국어 MD |
 | `inspect-task-and-choose-workflow` | 과제 설명과 전체 파일 | 과제 유형과 사용할 작업 흐름 |
 | `list-required-results-and-rules` | 과제 원문과 담당자 답변 | 제출물·요구사항·제한사항·성공 기준 목록 |
 | `prepare-clear-business-questions` | 아직 모호한 업무 조건 | 실무자에게 물을 짧고 결정 가능한 질문 |

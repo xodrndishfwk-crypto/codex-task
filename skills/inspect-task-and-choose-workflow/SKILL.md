@@ -7,6 +7,8 @@ description: Inspect the task description and provided files, then choose the re
 
 Before implementation, inspect the task README, required deliverables, existing files, and run instructions. Use `python codex-task/kit.py scan .` when a compact file summary helps.
 
+Before classifying or implementing the task, use `explain-readme-in-plain-korean` to create a Korean `reports/<task-name>/README-이해하기.md` guide from the actual task README. Include its link in the inspection-stage report and chat; no separate request is needed. If the guide already exists, inspect and reuse the current generated guide without overwriting user-authored work.
+
 ## Classify the task
 
 - Choose data analysis when data files and analytical findings are central.
