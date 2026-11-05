@@ -22,7 +22,7 @@ Codex에 기존 파일, 실행 명령, 테스트, 변경 상태를 읽기 전용
 
 ## 4. 계획과 구현
 
-`skills/plan-small-steps-and-checks/SKILL.md`, `skills/plan-time-and-stop-points/SKILL.md`, `templates/step-by-step-work-plan.md`를 사용한다. 각 단계는 로컬 검증 방법을 포함한다. 작은 변경 후 테스트하는 흐름을 반복하고 `templates/decisions-and-work-log.md`에 중요한 결정과 증거를 남긴다.
+`skills/plan-small-steps-and-checks/SKILL.md`, `templates/step-by-step-work-plan.md`를 사용한다. 각 단계는 로컬 검증 방법을 포함한다. 작은 변경 후 테스트하는 흐름을 반복하고 `templates/decisions-and-work-log.md`에 중요한 결정과 증거를 남긴다.
 
 ### 앱 개발 과제
 

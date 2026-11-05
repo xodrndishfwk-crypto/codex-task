@@ -11,7 +11,6 @@
 | `list-required-results-and-rules` | 과제 원문과 담당자 답변 | 제출물·요구사항·제한사항·성공 기준 목록 |
 | `prepare-clear-business-questions` | 아직 모호한 업무 조건 | 실무자에게 물을 짧고 결정 가능한 질문 |
 | `plan-small-steps-and-checks` | 확정된 요구사항 | 단계별 작업과 각 단계의 확인 방법 |
-| `plan-time-and-stop-points` | 제한 시간과 남은 작업 | 시간 배분과 새 기능을 멈출 시점 |
 
 ## 매뉴얼과 여러 서류를 처리할 때
 
